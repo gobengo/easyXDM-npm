@@ -1,8 +1,13 @@
 {
   "name": "easyxdm",
-  "version": "2.4.19-pre.0",
+  "version": "2.4.19-pre.1",
   "description": "",
   "main": "lib/easyXDM.js",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gobengo/easyXDM-npm.git"
+  },
   "author": "",
   "license": "MIT"
 }
