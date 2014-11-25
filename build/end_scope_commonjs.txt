@@ -1,0 +1,2 @@
+module.exports = easyXDM;
+})(window, document, location, window.setTimeout, decodeURIComponent, encodeURIComponent);

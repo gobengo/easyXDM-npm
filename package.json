@@ -1,0 +1,8 @@
+{
+  "name": "easyxdm",
+  "version": "2.4.19-pre.0",
+  "description": "",
+  "main": "lib/easyXDM.js",
+  "author": "",
+  "license": "MIT"
+}
