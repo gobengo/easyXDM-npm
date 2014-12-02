@@ -2,7 +2,7 @@
 VERSION=$(shell node -e "process.stdout.write(require('./package.json').version)")
 SRC_DIR=easyXDM/src
 
-build: lib/easyXDM.js
+build: lib/easyXDM.js lib/easyXDM.debug.js
 
 clean:
 	rm -rf lib/ easyXDM/ node_modules/
@@ -13,7 +13,7 @@ easyXDM/:
 lib/:
 	mkdir -p lib
 
-lib/easyXDM.js: easyXDM/ lib/
+lib/easyXDM.debug.js: easyXDM/ lib/
 	cat $(SRC_DIR)/begin_scope.txt \
 	    $(SRC_DIR)/Core.js \
 	    $(SRC_DIR)/Debug.js \
@@ -33,4 +33,9 @@ lib/easyXDM.js: easyXDM/ lib/
 	    $(SRC_DIR)/stack/RpcBehavior.js \
 	    build/end_scope_commonjs.txt \
 		| sed -l -e "s/%%version%%/$(VERSION)/g" \
-		> lib/easyXDM.js
+		> lib/easyXDM.debug.js
+
+lib/easyXDM.js: lib/easyXDM.debug.js
+	cat lib/easyXDM.debug.js \
+	| sed -e '/#ifdef debug/,/#endif/d' \
+	> lib/easyXDM.js
