@@ -1,8 +1,11 @@
 {
   "name": "easyxdm",
-  "version": "2.4.19-pre.2",
+  "version": "2.4.19-pre.3",
   "description": "",
   "main": "lib/easyXDM.js",
+  "scripts": {
+    "postinstall": "make"
+  },
   "homepage": "",
   "repository": {
     "type": "git",

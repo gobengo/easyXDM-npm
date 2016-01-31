@@ -1,5 +1,5 @@
 .PHONY: build
-VERSION=$(shell node -e "process.stdout.write(require('./package.json').version)")
+VERSION=$(shell node -e "process.stdout.write(require('./package.json').version)" | sed 's/-.*//')
 SRC_DIR=easyXDM/src
 
 build: lib/easyXDM.js lib/easyXDM.debug.js
